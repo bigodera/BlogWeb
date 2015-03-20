@@ -33,3 +33,7 @@ C:\Users\Gabriel\Documents\Projects\BlogWeb\BlogWeb\bin\Ninject.Web.Common.pdb
 C:\Users\Gabriel\Documents\Projects\BlogWeb\BlogWeb\bin\Ninject.Web.Common.xml
 C:\Users\Gabriel\Documents\Projects\BlogWeb\BlogWeb\bin\Ninject.Web.Mvc.pdb
 C:\Users\Gabriel\Documents\Projects\BlogWeb\BlogWeb\bin\Ninject.Web.Mvc.xml
+C:\Users\Gabriel\Documents\Projects\BlogWeb\BlogWeb\bin\WebMatrix.Data.dll
+C:\Users\Gabriel\Documents\Projects\BlogWeb\BlogWeb\bin\WebMatrix.WebData.dll
+C:\Users\Gabriel\Documents\Projects\BlogWeb\BlogWeb\bin\WebMatrix.Data.xml
+C:\Users\Gabriel\Documents\Projects\BlogWeb\BlogWeb\bin\WebMatrix.WebData.xml

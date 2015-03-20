@@ -22,7 +22,19 @@
                 <td>
                     @Html.ActionLink("Editar", "Visualiza", new { id = p.Id }, new { @class = "icon-edit" })
                 </td>
+                <td id="publicar@(p.Id)">
+                    <a href="#" onclick="publicaPost(@p.Id)">Publicar</a>
+                </td>
             </tr>
         }
     </tbody>
 </table>
+
+<script>
+    function publicaPost(postId) {
+        $.post("/Post/Publica", { id: postId }, function () {
+            var elemento = $("#publicar" + postId);
+            elemento.html("Publicado");
+        });
+    }
+</script>

@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace BlogWeb.Controllers
 {
+    [Authorize]
     public class PostController : Controller
     {
         private PostDAO dao;
@@ -20,7 +21,7 @@ namespace BlogWeb.Controllers
             this.usuarioDAO = usuarioDAO;
         }
 
-        // GET: Post
+        
         public ActionResult Index()
         {
             IList<Post> posts = dao.Lista();
@@ -77,6 +78,15 @@ namespace BlogWeb.Controllers
                 ViewBag.Usuarios = usuarioDAO.Lista();
                 return View("Visualiza", viewModel);
             }
+        }
+
+        public ActionResult Publica(int id)
+        {
+            Post post = dao.BuscaPorId(id);
+            post.Publicado = true;
+            post.DataPublicacao = DateTime.Now;
+            dao.Atualiza(post);
+            return RedirectToAction("Index");
         }
     }
 }

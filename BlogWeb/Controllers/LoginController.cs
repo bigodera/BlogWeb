@@ -18,8 +18,16 @@ namespace BlogWeb.Controllers
 
             if (!WebSecurity.Initialized)
             {
-                WebSecurity.InitializeDatabaseConnection(
-                "blog", "Usuario", "Id", "Login", true);
+                try
+                {
+                    WebSecurity.InitializeDatabaseConnection(
+                    "blog", "Usuario", "Id", "Login", true);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
             }
         }
 
@@ -29,11 +37,11 @@ namespace BlogWeb.Controllers
             return View();
         }
 
-        public ActionResult Autentica(string login, string senha)
+        public ActionResult Autentica(Usuario usuario)
         {
-            if (WebSecurity.Login(login, senha))
+            if(WebSecurity.Login(usuario.Login, usuario.Password))
             {
-                return RedirectToAction("Index", "Post");
+                return RedirectToAction("index", "post");
             }
             else
             {

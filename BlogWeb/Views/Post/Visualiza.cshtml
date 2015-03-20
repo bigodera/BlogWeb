@@ -1,4 +1,4 @@
-﻿@model BlogWeb.Models.Post
+﻿@model BlogWeb.ViewModels.PostModel
 
 @using(Html.BeginForm("Altera", "Post", FormMethod.Post))
 {
@@ -16,6 +16,10 @@
     @Html.ValidationMessageFor(p => p.Publicado)
     @Html.LabelFor(p => p.Publicado, "Publicado?")
     @Html.CheckBoxFor(p => p.Publicado)
+    
+    @Html.LabelFor(p => p.AutorId, "Autor: ")
+    @Html.DropDownListFor(p => p.AutorId, new SelectList(ViewBag.Usuarios, "Id", "Nome"))
+    @Html.ValidationMessageFor(p => p.AutorId)
 
     <input type="submit" value="Alterar" />
 }
