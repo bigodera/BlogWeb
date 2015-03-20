@@ -1,0 +1,13 @@
+﻿@model BlogWeb.Models.Usuario
+@using (Html.BeginForm("Adiciona", "Usuario", FormMethod.Post))
+{
+    @Html.LabelFor(u => u.Nome, "Nome:")
+    @Html.TextBoxFor(u => u.Nome)
+    @Html.LabelFor(u => u.Login, "Login:")
+    @Html.TextBoxFor(u => u.Login)
+    @Html.LabelFor(u => u.Password, "Password:")
+    @Html.PasswordFor(u => u.Password)
+    @Html.LabelFor(u => u.Email, "E-mail:")
+    @Html.TextBoxFor(u => u.Email)
+    <input type="submit" value="Cadastrar" />
+}

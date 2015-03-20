@@ -1,0 +1,21 @@
+﻿@model BlogWeb.Models.Post
+
+@using(Html.BeginForm("Altera", "Post", FormMethod.Post))
+{
+    @Html.HiddenFor(p => p.Id)
+
+    @Html.ValidationMessageFor(p => p.Titulo)
+    @Html.LabelFor(p => p.Titulo, "Titulo:")
+    @Html.TextBoxFor(p => p.Titulo)
+    @Html.ValidationMessageFor(p => p.Conteudo)
+    @Html.LabelFor(p => p.Conteudo, "Conteudo:")
+    @Html.TextAreaFor(p => p.Conteudo)
+    @Html.ValidationMessageFor(p => p.DataPublicacao)
+    @Html.LabelFor(p => p.DataPublicacao, "Data de publicação:")
+    @Html.TextBoxFor(p => p.DataPublicacao)
+    @Html.ValidationMessageFor(p => p.Publicado)
+    @Html.LabelFor(p => p.Publicado, "Publicado?")
+    @Html.CheckBoxFor(p => p.Publicado)
+
+    <input type="submit" value="Alterar" />
+}

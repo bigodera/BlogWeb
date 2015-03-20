@@ -1,0 +1,32 @@
+﻿@model BlogWeb.ViewModels.PostModel
+
+
+
+@using (Html.BeginForm("Adiciona", "Post", FormMethod.Post))
+{
+    @Html.ValidationMessage("post.Invalido")
+    @Html.ValidationMessageFor(p => p.Titulo)
+    @Html.LabelFor(p => p.Titulo, "Título:")
+    @Html.TextBoxFor(p => p.Titulo)
+    @Html.ValidationMessageFor(p => p.Conteudo)
+    @Html.LabelFor(p => p.Conteudo, "Conteúdo:")
+    @Html.TextAreaFor(p => p.Conteudo)
+    @Html.ValidationMessageFor(p => p.DataPublicacao)
+    @Html.LabelFor(p => p.DataPublicacao, "Data de publicação")
+    @Html.TextBoxFor(p => p.DataPublicacao)
+    @Html.ValidationMessageFor(p => p.Publicado)
+    @Html.LabelFor(p => p.Publicado, "Publicado?")
+    @Html.CheckBoxFor(p => p.Publicado)
+    
+    @Html.LabelFor(p => p.AutorId, "Autor: ")
+    @Html.DropDownListFor(p => p.AutorId, new SelectList(ViewBag.Usuarios, "Id", "Nome"))
+    @Html.ValidationMessageFor(p => p.AutorId)
+    
+    <input type="submit" value="Cadastrar" />
+}
+
+@section Scripts {
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

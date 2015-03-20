@@ -1,0 +1,12 @@
+﻿<aside>
+    <h3>Autores</h3>
+    <ul>
+        @foreach (BlogWeb.Models.Usuario u in ViewBag.Autores)
+        {
+            <li>
+                @Html.ActionLink(u.Nome, "BuscaPorAutor", "Busca",
+new { nome = u.Nome }, null)
+        </li>
+        }
+    </ul>
+</aside>    
